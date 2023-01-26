@@ -208,8 +208,9 @@ def main():
     else:
         if args.access_key is None:
             raise ValueError("AccessKey (--access_key) is required")
-        keyword_paths = args.keyword_paths
-        keyword_paths += [pvporcupine.KEYWORD_PATHS[x] for x in args.keywords]
+        keyword_paths = args.keyword_paths if args.keyword_paths is not None else []
+        if args.keywords is not None:
+            keyword_paths += [pvporcupine.KEYWORD_PATHS[x] for x in args.keywords]
         '''
         if args.keyword_paths is None:
             if args.keywords is None:
@@ -222,7 +223,7 @@ def main():
 
         if args.sensitivities is None:
             args.sensitivities = [0.5] * len(keyword_paths)
-            args.sensitivities = [0.5, 0.9]
+            #args.sensitivities = [0.5, 0.9]
 
         if len(keyword_paths) != len(args.sensitivities):
             raise ValueError('Number of keywords does not match the number of sensitivities.')
