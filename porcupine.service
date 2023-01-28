@@ -7,6 +7,6 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=30
-ExecStart=/usr/bin/python3 -u /home/debian/porcupine/porcupine_demo_mic.py --access_key 6+IQoxrjY8//bWy4h4IH3+Z1QIasU4SJd1jUBfHkqCjQiZpFTfN57Q== --keyword_paths /home/debian/porcupine/lights-off_en_beaglebone_v2_1_0.ppn  /home/debian/porcupine/livingroom-lamp_en_beaglebone_v2_1_0.ppn --audio_device_index 1
+ExecStart=/usr/bin/python3 -u /home/debian/porcupine/porcupine_demo_mic.py --access_key 6+IQoxrjY8//bWy4h4IH3+Z1QIasU4SJd1jUBfHkqCjQiZpFTfN57Q== --keyword_paths /home/debian/porcupine/computer-lights-off_en_beaglebone_v2_1_0.ppn /home/debian/porcupine/livingroom-lamp_en_beaglebone_v2_1_0.ppn --audio_device_index 1
 [Install]
 WantedBy=multi-user.target
